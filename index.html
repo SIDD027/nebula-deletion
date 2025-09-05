@@ -3,47 +3,41 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>RevSyntech App Data Deletion</title>
+  <title>RevSyntech App User Data Deletion</title>
   <style>
-    body { font-family: Arial, sans-serif; max-width: 600px; margin: 50px auto; line-height: 1.6; color: #333; }
-    h1 { text-align: center; color: #2c3e50; }
-    input, button { padding: 10px; margin: 10px 0; width: 100%; box-sizing: border-box; }
-    button { background-color: #e74c3c; color: white; border: none; cursor: pointer; }
-    button:hover { background-color: #c0392b; }
+    body {
+      font-family: Arial, sans-serif;
+      max-width: 700px;
+      margin: 50px auto;
+      line-height: 1.6;
+      color: #333;
+      padding: 0 20px;
+    }
+    h1 {
+      text-align: center;
+      color: #2c3e50;
+    }
+    a {
+      color: #3498db;
+    }
+    p {
+      margin-bottom: 20px;
+    }
   </style>
 </head>
 <body>
-  <h1>RevSyntech App Data Deletion</h1>
-  <p>Enter your Instagram username to permanently delete all your data from RevSyntech App:</p>
-  <form id="deleteForm">
-    <input type="text" name="instagram_username" placeholder="Instagram username" required />
-    <button type="submit">Delete My Data</button>
-  </form>
-  <p id="message"></p>
+  <h1>RevSyntech App User Data Deletion</h1>
 
-  <script>
-    const form = document.getElementById('deleteForm');
-    const message = document.getElementById('message');
+  <p>If you want to delete all your data from RevSyntech App, please follow these instructions:</p>
 
-    form.addEventListener('submit', async (e) => {
-      e.preventDefault();
-      const username = form.instagram_username.value.trim();
-      if(!username) return;
+  <ol>
+    <li>Email us at <a href="mailto:youremail@example.com">youremail@example.com</a> with your Instagram username.</li>
+    <li>We will remove your account, posts, and any associated information from our system within 24 hours.</li>
+    <li>You will receive a confirmation email once your data has been deleted.</li>
+  </ol>
 
-      try {
-        const res = await fetch('https://your-backend.com/users/delete', {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({ instagram_username: username })
-        });
-        const data = await res.json();
-        message.textContent = data.success ? 
-          'Your data has been successfully deleted.' : 
-          'Error: ' + (data.error || 'Unable to delete data.');
-      } catch(err) {
-        message.textContent = 'Network error: ' + err.message;
-      }
-    });
-  </script>
+  <p>This page satisfies Instagram’s requirement for a User Data Deletion URL for app review. Once we implement OAuth, this process will be automated through our backend.</p>
+
+  <p style="text-align:center; margin-top:40px;">&copy; 2025 RevSyntech App</p>
 </body>
 </html>
